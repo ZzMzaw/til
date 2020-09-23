@@ -1,0 +1,10 @@
+= Get Qube preferences and features with SaltStack
+
+We all know that Qube Manager provide info about qubes but to retrieve these info (at least some of them) through SaltStack, just open a terminal in `dom0` and execute following commands:
+
+* For preferences: `sudo qubesctl qvm.prefs <vm_name>`
+* For features: `sudo qubesctl qvm.features <vm_name>`
+
+Where `<vm_name>` is the name of the targeted qube.
+
+Source code can be viewed at `/srv/salt/_modules/ext_module_qvm.py`.
