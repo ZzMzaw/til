@@ -1,0 +1,24 @@
+= Change all commits author
+
+NOTE: History will be rewritten so new commits will be created
+
+As a prerequisite, new author must be set properly:
+```bash
+git config --global user.name "Author Name"
+git config --global user.email "author@email.address"
+```
+
+To reset author for a single commit, you just need to rebase it:
+```bash
+git commit --amend --no-edit --reset-author
+```
+
+To reset author for all commits starting with commit XYZ, you need to rebase from it while executing the amend:
+```bash
+git rebase -r XYZ --exec 'git commit --amend --no-edit --reset-author'
+```
+
+To reset author for all commits, you need to rebase from root while executing the amend:
+```bash
+git rebase -r --root --exec 'git commit --amend --no-edit --reset-author'
+```
