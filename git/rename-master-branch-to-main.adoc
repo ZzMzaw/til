@@ -1,0 +1,34 @@
+= Rename master branch to main
+
+NOTE: This can be applied to rename any branch
+
+First rename the local `master` branch into `main`:
+```bash
+git branch -m master main
+```
+
+As branch is renamed, it is assumed only the `master` branch exists in the remote repository.
+
+Push the new branch:
+```bash
+git push -u origin main
+```
+
+Change the default branch of the project to `main` (if not done yet when repository has been created).
+
+If needed, delete the remote `master` branch:
+```bash
+git push origin --delete master
+```
+
+Using prezto aliases:
+
+```bash
+# Rename local branch
+gbm master main
+# Push the new branch
+gco main
+gpc
+# Delete the old branch (once no more the default branch)
+gp origin --delete master
+```
