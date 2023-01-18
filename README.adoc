@@ -1,23 +1,43 @@
 = Today I Learned... (TIL)
 
-Inspired from https://github.com/simonw/til[simonw's TILs] and discovered through his https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/[self-update README].
+Inspired from https://github.com/simonw/til[simonw's TILs] and discovered through his https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/[self-update README blog post].
 
 As per jbranchaud definition, TILs are:
 
 [quote, jbranchaud, https://github.com/jbranchaud/til]
 A collection of concise write-ups on small things I learn day to day across a variety of languages and technologies. These are things that don't really warrant a full blog post.
 
-Nothing else to add, so let's go.
-
 == My TILs
 
-0 TILs so far
+11 TILs so far
 
-=== Categories
+=== Topics
 
-'''
+* <<git,git>> (4)
+* <<qubesos,qubesos>> (4)
+* <<shell,shell>> (3)
 
-== Other intresting TILs
+=== git [[git]]
+
+* link:git/intent-to-add-a-file.adoc[Intent to add a file] _(updated: 2020-12-10)_
+* link:git/track-upstream.adoc[Tracking upstream] _(updated: 2020-12-10)_
+* link:git/submit-pr.adoc[Create branch to submit a PR to upstream] _(updated: 2020-12-10)_
+* link:git/merge-upstream.adoc[Merge upstream] _(updated: 2020-12-10)_
+
+=== qubesos [[qubesos]]
+
+* link:qubesos/look-for-available-templates.adoc[Look for available templates] _(updated: 2020-11-02)_
+* link:qubesos/saltstack-get-qube-preferences.adoc[Get Qube preferences and features with SaltStack] _(updated: 2020-09-23)_
+* link:qubesos/ethernet-wifi-usb-adapters-limited-support.adoc[Limited support for ethernet/wifi USB adapters] _(updated: 2020-08-12)_
+* link:qubesos/saltstack-debug-state.adoc[Debug SaltStack state] _(updated: 2020-12-10)_
+
+=== shell [[shell]]
+
+* link:shell/retrieve-args-used-to-launch-a-process.adoc[Retrieve args used to launch a process] _(updated: 2020-12-10)_
+* link:shell/get-info-about-hardware.adoc[Get info about hardware] _(updated: 2020-11-18)_
+* link:shell/retrieve-pid-of-a-process.adoc[Retrieve pid of a process] _(updated: 2020-07-29)_
+
+== Other interesting TILs
 
 * https://github.com/simonw/til
 * https://github.com/jbranchaud/til
