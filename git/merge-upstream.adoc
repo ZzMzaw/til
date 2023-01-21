@@ -2,21 +2,21 @@
 
 Pre-requesite: link:track-upstream.adoc[Tracking upstream]
 
-Make sure master is clean with no pending modification or unpushed commit.
+Make sure `main` is clean with no pending modification or unpushed commit.
 
 ```bash
 # Create an upstream branch to merge upstream:
-git checkout master
+git checkout main
 git pull
 git checkout -b merge-upstream
-git pull upstream master
+git pull upstream main
 
-# Compare branch with master
-git checkout master
-git diff --no-ext-diff master merge-upstream
+# Compare branch with `main`
+git checkout main
+git diff --no-ext-diff main merge-upstream
 
-# Rebase upstream branch to master if everything is ok then push:
-git checkout master
+# Rebase upstream branch to `main` branch if everything is ok then push:
+git checkout main
 git rebase merge-upstream
 git push
 
@@ -28,17 +28,17 @@ Using prezto aliases:
 
 ```bash
 # Create an upstream branch to merge upstream:
-gco master
+gco main
 gfm
 gbc merge-upstream
-gfm upstream master
+gfm upstream main
 
-# Compare branch with master
-gco master
-gwd master merge-upstream
+# Compare branch with `main` branc
+gco main
+gwd main merge-upstream
 
-# Rebase upstream branch to master if everything is ok then push:
-gco master
+# Rebase upstream branch to `main` branc if everything is ok then push:
+gco main
 gr merge-upstream
 gp
 

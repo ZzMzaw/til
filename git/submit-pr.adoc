@@ -6,7 +6,7 @@ Create a branch and cherry-pick interresting commits to push to upstream through
 
 ```bash
 git checkout -b fix-something
-git reset --hard upstream/master
+git reset --hard upstream/main
 git cherry-pick --no-commit <interresting-commit-hash>
 git push --set-upstream origin "$(git-branch-current 2> /dev/null)"
 ```
@@ -17,7 +17,7 @@ Using prezto aliases:
 
 ```bash
 gbc fix-something
-gwR upstream/master
+gwR upstream/main
 gcP <interresting-commit-hash>
 gpc
 ```
