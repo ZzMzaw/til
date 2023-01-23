@@ -1,0 +1,46 @@
+= Move one repository to another
+
+NOTE: Github and other public source code repositories have convenient features to do all of this without bothering with git (rename, transfer ownership, ...) but you have to remain within the platform.
+
+First of all, clone the existing repository:
+```bash
+git clone <old-repo>
+```
+
+Set remote origin to the new repository:
+```bash
+git remote set-url origin <new-repo>
+```
+
+Prune the existing remote branches:
+```bash
+git remote prune origin
+```
+
+When done, it is possible to adapt the repo in order to:
+
+* link:change-all-commits-author.adoc[change all commits author]
+* link:rename-master-branch-to-main.adoc[rename a master branch to main]
+
+Last but not least, make all the existing branches track branches in the new repository while pushing them:
+```bash
+git checkout <branch-name>
+git push --set-upstream origin "<branch-name>"
+```
+
+Using prezto aliases:
+
+```bash
+# Clone old repo
+gfc <old-repo>
+# Set remote to the new repo
+gR set-url origin <new-repo>
+# Prune existing remote branches
+gRp
+
+# Do any update you want
+
+# Track branches while pushin them
+gco <branch-name>
+gpc
+```
