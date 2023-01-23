@@ -9,23 +9,24 @@ A collection of concise write-ups on small things I learn day to day across a va
 
 == My TILs
 
-14 TILs so far
+15 TILs so far
 
 === Topics
 
-* <<git,git>> (7)
+* <<git,git>> (8)
 * <<qubesos,qubesos>> (4)
 * <<shell,shell>> (3)
 
 === git [[git]]
 
-* link:git/change-all-commits-author.adoc[Change all commits author] _(updated: 2023-01-16)_
+* link:git/change-all-commits-author.adoc[Change all commits author] _(updated: 2023-01-23)_
 * link:git/rename-master-branch-to-main.adoc[Rename master branch to main] _(updated: 2023-01-17)_
 * link:git/intent-to-add-a-file.adoc[Intent to add a file] _(updated: 2020-12-10)_
-* link:git/submit-pr.adoc[Create branch to submit a PR to upstream] _(updated: 2020-12-10)_
-* link:git/merge-upstream.adoc[Merge upstream] _(updated: 2020-12-10)_
+* link:git/submit-pr.adoc[Create branch to submit a PR to upstream] _(updated: 2023-01-21)_
+* link:git/merge-upstream.adoc[Merge upstream] _(updated: 2023-01-21)_
+* link:git/move-one-repo-to-another.adoc[Move one repository to another] _(updated: 2023-01-23)_
 * link:git/track-upstream.adoc[Tracking upstream] _(updated: 2020-12-10)_
-* link:git/commit-in-the-past.adoc[Commit in the past] _(updated: 2023-01-18)_
+* link:git/commit-in-the-past.adoc[Commit in the past] _(updated: 2023-01-23)_
 
 === qubesos [[qubesos]]
 
