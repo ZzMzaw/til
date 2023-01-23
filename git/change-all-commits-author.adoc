@@ -8,17 +8,29 @@ git config --global user.name "Author Name"
 git config --global user.email "author@email.address"
 ```
 
-To reset author for a single commit, you just need to rebase it:
+To reset author for a single commit, rebase it then amend it as follow:
 ```bash
+# Overwrite the date
 git commit --amend --no-edit --reset-author
+
+# Preserve the date
+git commit --amend --no-edit --reset-author --date="$(git log -n 1 --format=%aD)"
 ```
 
-To reset author for all commits starting with commit XYZ, you need to rebase from it while executing the amend:
+To reset author for all commits starting with commit <XYZ> (excluded), rebase from it while executing the amend:
 ```bash
-git rebase -r XYZ --exec 'git commit --amend --no-edit --reset-author'
+# Overwrite the date
+git rebase -r <XYZ> --exec 'git commit --amend --no-edit --reset-author'
+
+# Preserve the date
+git rebase -r <XYZ> --exec 'git commit --amend --no-edit --reset-author --date="$(git log -n 1 --format=%aD)"'
 ```
 
-To reset author for all commits, you need to rebase from root while executing the amend:
+To reset author for all commits, rebase from root while executing the amend:
 ```bash
+# Overwrite the date
 git rebase -r --root --exec 'git commit --amend --no-edit --reset-author'
+
+# Preserve the date
+git rebase -r --root --exec 'git commit --amend --no-edit --reset-author --date="$(git log -n 1 --format=%aD)"'
 ```
