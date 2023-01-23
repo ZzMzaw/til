@@ -27,6 +27,11 @@ git commit --date "<YYYY>-<MM>-<DD>T<hh>:<mm>:<ss>Z"
 ```
 (see https://git-scm.com/docs/git-commit#_date_formats for more details about date format)
 
+It can be done recursively from a specific commit <XYZ> (excluded) as follow:
+```bash
+git rebase -r <XYZ> --exec 'git commit --amend --no-edit --date="<YYYY>-<MM>-<DD>T<hh>:<mm>:<ss>Z"
+```
+
 Using prezto aliases:
 
 ```bash
