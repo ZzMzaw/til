@@ -1,0 +1,51 @@
+= Resize dom0
+
+NOTE: All these operations must be executed in a dom0 terminal
+
+First, let's look at the current dom0 size:
+```bash
+df -h
+# Look for /dev/mapper/qubes_dom0-root
+```
+
+Default size is 20G (at leat for Qubes 4.1).
+
+Then, let's look at the volume group to make sure there is enough space:
+```bash
+sudo pvs
+# Look for qubes_dom0 volume group (VG) free size
+````
+
+Last but not least, let's look at the Qubes OS root logical volume (LV):
+```bash
+sudo lvs /dev/qubes_dom0/root
+````
+
+It should report the same size as `df` command.
+
+Resize the logical volume to the expected size:
+```bash
+sudo lvresize --size <new-size> /dev/qubes_dom0/root
+```
+
+The LV should be resized accordingly:
+```bash
+sudo lvs /dev/qubes_dom0/root
+````
+
+But the filesystem still remains to be resized:
+```bash
+df -h
+# Look for /dev/mapper/qubes_dom0-root which should have the old size
+```
+
+Resize the filesystem to full extend:
+```bash
+sudo resize2fs /dev/mapper/qubes_dom0-root
+```
+
+Now the filesystem is resized and the space is available:
+```bash
+df -h
+# Look for /dev/mapper/qubes_dom0-root which should have the new size
+```
