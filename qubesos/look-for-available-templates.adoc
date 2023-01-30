@@ -1,15 +1,23 @@
 = Look for available templates
 
-If you want to know which template VMs are available from Qubes OS repo, just issue the following command in dom0:
+NOTE: All these operations must be executed in a dom0 terminal
 
+Starting Qubes 4.1, interact with templates by running following commands:
 ```bash
-sudo qubes-dom0-update --action=search qubes-template
+# In CLI
+qvm-template
+
+# With GUI
+qvm-template-gui
 ```
 
-If you want to include also community template VMs then issue the following command in dom0 instead:
+More details are available at: https://www.qubes-os.org/doc/template-manager/.
 
+For versions of Qubes before 4.1, if you want to know which template VMs are available from Qubes OS repo, just issue the following command in dom0:
 ```bash
+# For default templates
+sudo qubes-dom0-update --action=search qubes-template
+
+# Including communicate template
 sudo qubes-dom0-update --enablerepo=qubes-templates-community --action=search qubes-template
 ```
-
-Inspired from: https://github.com/Jeeppler/qubes-cheatsheet/blob/master/qubes-cheatsheet.md
