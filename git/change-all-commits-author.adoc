@@ -10,27 +10,29 @@ git config --global user.email "author@email.address"
 
 To reset author for a single commit, rebase it then amend it as follow:
 ```bash
-# Overwrite the date
+# Overwrite the committer date
 git commit --amend --no-edit --reset-author
 
-# Preserve the date
-git commit --amend --no-edit --reset-author --date="$(git log -n 1 --format=%aD)"
+# Preserve the committer date
+GIT_COMMITTER_DATE="$(git log -n 1 --format=%aD)" git commit --amend --no-edit --reset-author
 ```
 
 To reset author for all commits starting with commit <XYZ> (excluded), rebase from it while executing the amend:
 ```bash
-# Overwrite the date
+# Overwrite the committer date
 git rebase -r <XYZ> --exec 'git commit --amend --no-edit --reset-author'
 
-# Preserve the date
-git rebase -r <XYZ> --exec 'git commit --amend --no-edit --reset-author --date="$(git log -n 1 --format=%aD)"'
+# Preserve the committer date
+git rebase -r <XYZ> --exec 'GIT_COMMITTER_DATE="$(git log -n 1 --format=%aD)"  git commit --amend --no-edit --reset-author'
 ```
 
 To reset author for all commits, rebase from root while executing the amend:
 ```bash
-# Overwrite the date
+# Overwrite the committer date
 git rebase -r --root --exec 'git commit --amend --no-edit --reset-author'
 
-# Preserve the date
-git rebase -r --root --exec 'git commit --amend --no-edit --reset-author --date="$(git log -n 1 --format=%aD)"'
+# Preserve the commiter date
+git rebase -r --root --exec 'GIT_COMMITTER_DATE="$(git log -n 1 --format=%aD)" git commit --amend --no-edit --reset-author'
 ```
+
+Without the `--reset-author`, this can be used to resync all committer dates to author dates.
